@@ -9,7 +9,7 @@ const webhook = new IncomingWebhook(url);
 
 router.get('/', (req, res, next) => res.render('index', { title: 'Express' }));
 
-router.get('/whtest', WHTest);
+router.post('/whtest', WHTest);
 
 
 
