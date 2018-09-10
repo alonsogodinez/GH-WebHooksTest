@@ -17,7 +17,7 @@ function WHTest (req, res, next) {
   console.log(req.body)      
   res.json(req.body)
   // webhook.send({
-  //   "text": "Te amo sayda ❤️❤️",
+  //   "text": "Probando",
   //   "attachments": [
   //     {
   //       "fallback": "Plan a vacation",
