@@ -5,7 +5,7 @@ const { IncomingWebhook, WebClient } = require('@slack/client');
 const url = "https://hooks.slack.com/services/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";
 const webhook = new IncomingWebhook(url);
 
-const token = "Ish4vtquPrFbPXU05VcVW3Nj";
+const token = "xoxp-429168385154-429046675235-433154998660-8cedb0409c4e15c5276f14a267407619";
 const channelID = "CCMEC99S5";
 
 const web = new WebClient(token);
