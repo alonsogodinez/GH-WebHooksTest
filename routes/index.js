@@ -50,7 +50,7 @@ function WHTest (req, res, next) {
 
 
   web.chat.postMessage({
-  
+    token,
     channel: channelID,
     text: "Probando",
     "attachments": [
