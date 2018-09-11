@@ -6,6 +6,9 @@ const url = "https://hooks.slack.com/services/TCM4YBB4J/BCN1WF84A/tbaiwmmTlhWpFK
 const webhook = new IncomingWebhook(url);
 
 const token = "xoxp - 429168385154 - 429046675235 - 431106254775 - 803928ae74ccd314519fbf8c6e01ca9c";
+const channelID = "CCMEC99S5";
+
+const web = new WebClient(token);
 
 router.get('/', (req, res, next) => res.render('index', { title: 'Express' }));
 
@@ -44,7 +47,9 @@ function WHTest (req, res, next) {
 
   console.log(req.body)      
   //res.json(req.body)
-  webhook.send({
+
+
+  web.chat.postMessage(channelID, {
     "text": "Probando",
     "attachments": [
       {
@@ -83,13 +88,12 @@ function WHTest (req, res, next) {
         ]
       }
     ]
-  }, (err, res) => {
-    if (err) {
-      console.log('Error:', err);
-    } else {
-      console.log('Message sent: ', res);
-    }
-  });
+  })
+  .then((res) => {
+    // `res` contains information about the posted message
+    console.log('Message sent: ', res);
+  })
+  .catch(console.error);
   
 }
 module.exports = router;
