@@ -50,8 +50,9 @@ function WHTest (req, res, next) {
 
 
   web.chat.postMessage({
-    "channel": channelID,
-    "text": "Probando",
+    token,
+    channel: channelID,
+    text: "Probando",
     "attachments": [
       {
         "fallback": "Plan a vacation",
