@@ -49,7 +49,8 @@ function WHTest (req, res, next) {
   //res.json(req.body)
 
 
-  web.chat.postMessage(channelID, {
+  web.chat.postMessage({
+    "channel": channelID,
     "text": "Probando",
     "attachments": [
       {
