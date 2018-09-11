@@ -88,12 +88,9 @@ function WHTest (req, res, next) {
         ]
       }
     ]
-  })
-  .then((res) => {
-    // `res` contains information about the posted message
-    console.log('Message sent: ', res);
-  })
-  .catch(console.error);
-  
+  }, (err, res) => {
+    if (err) return console.error(err)
+    return console.log('Message sent: ', res);
+  })  
 }
 module.exports = router;
