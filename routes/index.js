@@ -5,7 +5,7 @@ const { IncomingWebhook, WebClient } = require('@slack/client');
 const url = "https://hooks.slack.com/services/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";
 const webhook = new IncomingWebhook(url);
 
-const token = "xoxp - 429168385154 - 429046675235 - 431106254775 - 803928ae74ccd314519fbf8c6e01ca9c";
+const token = "xoxp-429168385154-429046675235-431106254775-803928ae74ccd314519fbf8c6e01ca9c";
 const channelID = "CCMEC99S5";
 
 const web = new WebClient(token);
@@ -50,7 +50,7 @@ function WHTest (req, res, next) {
 
 
   web.chat.postMessage({
-    token,
+  
     channel: channelID,
     text: "Probando",
     "attachments": [
