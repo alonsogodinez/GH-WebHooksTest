@@ -1,12 +1,11 @@
 const express = require('express');
 const router = express.Router();
 const { IncomingWebhook, WebClient } = require('@slack/client');
+)
+const webhook = new IncomingWebhook(process.env.SLACK_HOOK_URL);
 
-const url = "https://hooks.slack.com/services/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";
-const webhook = new IncomingWebhook(url);
-
-const token = "xoxp-429168385154-429046675235-432650644976-25815d373bd493f76235e91547c5ed7b";
-const channelID = "CCMEC99S5";
+const token = process.env.SLACK_TOKEN;
+const channelID = process.env.CCMEC99S5;
 
 const web = new WebClient(token);
 
@@ -52,7 +51,7 @@ function WHTest (req, res, next) {
   web.chat.postMessage({
     channel: channelID,
     text: "Probando",
-    "attachments": [
+    attachments: [
       {
         "fallback": "Plan a vacation",
         "author_name": "Owner: rdesoto",
