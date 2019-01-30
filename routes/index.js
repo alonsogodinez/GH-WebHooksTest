@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const { IncomingWebhook, WebClient } = require('@slack/client');
-)
+
 const webhook = new IncomingWebhook(process.env.SLACK_HOOK_URL);
 
 const token = process.env.SLACK_TOKEN;
@@ -37,11 +37,17 @@ function WHTest (req, res, next) {
     case "closed": {
       console.log("PR cerrado")
     }
-    case "opened":
+    case "opened": {
       const repoName = repository.name;
       const { title, user, html_url, requested_reviewers, labels, head /*bug branch*/, base/*master o dev*/, mergeable/*diferente de null y recien comparar booleano*/ } = pull_request;
       console.log("creo PR", title, user, requested_reviewers, head, base)
       break
+    }
+    
+    default: {
+      console.log("default action", action)
+      break
+    }
   }
 
   console.log(req.body)      
