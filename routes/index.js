@@ -14,7 +14,7 @@ router.get('/', (req, res, next) => res.render('index', { title: 'Express' }));
 router.post('/whtest', WHTest);
 
 router.get("/usuarios", (req, res, next) => {
-
+  web.users.list().then(console.log)
 })
 
 function WHTest (req, res, next) {
@@ -50,7 +50,7 @@ function WHTest (req, res, next) {
     }
   }
 
-  console.log(req.body)      
+  //console.log(req.body)      
   //res.json(req.body)
 
 
@@ -96,7 +96,7 @@ function WHTest (req, res, next) {
     ]
   }, (err, res) => {
     if (err) return console.error(err)
-    return console.log('Message sent: ', res);
+    //return console.log('Message sent: ', res);
   })  
 }
 module.exports = router;
