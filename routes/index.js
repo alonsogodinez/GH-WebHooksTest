@@ -5,7 +5,7 @@ const { IncomingWebhook, WebClient } = require('@slack/client');
 const webhook = new IncomingWebhook(process.env.SLACK_HOOK_URL);
 
 const token = process.env.SLACK_TOKEN;
-const channelID = process.env.CCMEC99S5;
+const channelID = process.env.SLACK_CHANNEL_ID;
 
 const web = new WebClient(token);
 
