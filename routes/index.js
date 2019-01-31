@@ -67,7 +67,7 @@ function WHTest (req, res, next) {
         "fallback": "Plan a vacation",
         "author_name": "Owner: rdesoto",
         "title": "Plan a vacation",
-        "text": `@${usersData[0].slackID2} update the PR`,
+        "text": `<@${usersData[0].slackID2}> update the PR`,
       
       }
     ]
