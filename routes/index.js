@@ -9,12 +9,17 @@ const channelID = process.env.SLACK_CHANNEL_ID;
 
 const web = new WebClient(token);
 
+const usersData = require("../users.json");
+
 router.get('/', (req, res, next) => res.render('index', { title: 'Express' }));
 
 router.post('/whtest', WHTest);
 
 router.get("/usuarios", (req, res, next) => {
-  web.users.list().then(console.log)
+  // web.users.list().then(({ members }) => {
+  //   console.log(members)
+  //   res.render("users", { users: members })
+  // }).catch(console.error)
 })
 
 function WHTest (req, res, next) {
@@ -62,36 +67,8 @@ function WHTest (req, res, next) {
         "fallback": "Plan a vacation",
         "author_name": "Owner: rdesoto",
         "title": "Plan a vacation",
-        "text": "I've been working too hard, it's time for a break.",
-        "actions": [
-          {
-            "name": "action",
-            "type": "button",
-            "text": "Complete this task",
-            "style": "",
-            "value": "complete"
-          },
-          {
-            "name": "tags_list",
-            "type": "select",
-            "text": "Add a tag...",
-            "data_source": "static",
-            "options": [
-              {
-                "text": "Launch Blocking",
-                "value": "launch-blocking"
-              },
-              {
-                "text": "Enhancement",
-                "value": "enhancement"
-              },
-              {
-                "text": "Bug",
-                "value": "bug"
-              }
-            ]
-          }
-        ]
+        "text": `@${usersData[0].slackID2} update the PR`,
+      
       }
     ]
   }, (err, res) => {

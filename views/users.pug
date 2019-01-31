@@ -1,0 +1,7 @@
+extends layout
+
+block content
+  ul
+    for user in users
+        li= JSON.stringify(user)
+
